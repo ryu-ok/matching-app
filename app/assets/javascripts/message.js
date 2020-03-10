@@ -2,19 +2,19 @@ $(function(){
   var buildHTML = function(message) {
     var html = 
               `<div class="message">
-              <div class="chat-box-right">
-                <div class="chat-hukidashi">
-                  <div class="content-right">
-                    ${message.content}
-                  </div>
-                  <div class="time">
+                <div class="chat-box-right">
+                  <div class="chat-hukidashi">
+                    <div class="content-right">
+                      ${message.content}
+                    </div>
+                    <div class="time">
                     ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="chat-face">
+                    <img src=${message.user_avatar} class = "user-image">
                   </div>
                 </div>
-                <div class="chat-face">
-                  <img src=${message.user_avatar} class = "user-image">
-                </div>
-              </div>
               </div>`
     return html;
   };
