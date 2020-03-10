@@ -1,0 +1,54 @@
+.user-info
+  .user-info__upper
+    .user-info__upper__left-box
+      .user-info__upper__left-box__icon
+        = image_tag @user.avatar.url, class: 'show_avatar' if @user.avatar.present?
+      .user-info__upper__left-box__area
+        .user-info__upper__left-box__area__name
+          = @user.name
+          = @user.age 
+          歳
+        .user-info__upper__left-box__area__hometown
+          = @user.hometown
+          %br
+          = icon('fas', 'heart', class: 'heart-icon')
+          = @user.followers.count
+    .user-info__upper__right-box
+      .user-info__upper__right-box__title
+        ・プロフィール文
+      .user-info__upper__right-box__comment
+        = @user.comment
+      .user-info__upper__right-box__btn
+        = render "relationships/follow_button", user: @user
+        - unless @user.id == current_user.id
+          - if @person.include?(@user)
+            - if @isRoom == true
+              = link_to "メッセージ画面へ", room_path(@roomId), class: "message-btn"
+            - else 
+              = form_for @room do |f|
+                = fields_for @entry do |e|
+                  = e.hidden_field :user_id, value: @user.id
+                = f.submit "メッセージを送る", class: "message-btn"
+  .hidden-box
+    .hidden-box__top
+      .hidden-box__top__box
+        マッチングが成立しました
+    .hidden-box__center
+      .hidden-box__center__box
+        .hidden-box__center__left
+          = image_tag current_user.avatar.url, class: 'show_avatar' if current_user.avatar.present?
+        .hidden-box__center__middle
+          = icon('fas', 'heart', class: 'matching-heart')
+        .hidden-box__center__right
+          = image_tag @user.avatar.url, class: 'show_avatar' if @user.avatar.present?
+    .hidden-box__bottom
+      .hidden-box__bottom__box
+        - if @isRoom == true
+          = link_to "メッセージ画面へ", room_path(@roomId), class: "message-btn"
+        - else 
+          = form_for @room do |f|
+            = fields_for @entry do |e|
+              = e.hidden_field :user_id, value: @user.id
+            = f.submit "メッセージを送る", class: "message-btn"
+
+

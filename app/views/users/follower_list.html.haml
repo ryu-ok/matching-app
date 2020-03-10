@@ -1,0 +1,18 @@
+.match-wrapper
+  .follower_list-box
+    もらったいいね
+  .match-user-list
+    - @users.each do |user|
+      .follower-user
+        .link_box
+          = link_to user_path(user) do
+            .user-icon
+              = image_tag user.avatar.url, class: 'user__avatar' if user.avatar.present?
+              %br
+          .profile
+            = user.name
+            = user.age
+            歳
+            %br
+            = user.hometown
+            %br

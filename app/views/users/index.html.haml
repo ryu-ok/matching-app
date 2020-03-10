@@ -1,0 +1,14 @@
+.user-list
+  - @users.each do |user|
+    .top
+      .name
+        = link_to user_path(user) do
+          = image_tag user.avatar.url, class: 'user__avatar' if user.avatar.present?
+          %br
+        .profile
+          = user.name
+          = user.age
+          歳
+          %br
+          = user.hometown
+          %br

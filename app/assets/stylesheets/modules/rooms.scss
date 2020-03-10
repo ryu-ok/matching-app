@@ -1,0 +1,182 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-name {
+  background-color: rgb(59, 59, 90);
+  height: 60px;
+  line-height: 60px;
+  padding-left: 150px;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  .rooms-user-link{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    .name-area {
+      margin-right: 10px;
+    }
+  }
+  .info-area{
+    color: white;
+    font-size: 25px;
+  }
+}
+
+.wrapper{
+  padding-top: 56px;
+}
+
+//チャットアイコンとチャットの吹き出し
+.user-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.chat-hukidashi{
+  margin: auto 20px;
+}
+
+.chats{
+  height: calc(100vh - 196px);
+  width: 100%;
+}
+.chat {
+  padding-top: 80px;
+  width: 100%;
+  padding-bottom: 80px;
+  overflow: scroll;
+  height: 100vh;
+  .message{
+    position: relative;
+  .chat-box-left{
+    display: flex;
+    padding-left: 80px;
+    height: 250px;
+    width: 90%;
+    .chat-hukidashi{
+      .content-left{
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 1.5em 5px 1em 25px;
+        padding: 20px 20px;
+        min-width: 120px;
+        max-width: 100%;
+        color: #555;
+        font-size: 25px;
+        background: rgb(166, 214, 233);
+        border: solid 3px #555;
+        box-sizing: border-box;
+        border-radius: 15px;
+      }
+    }
+  }
+  .chat-box-right{
+    display: flex;
+    text-align: right;
+    margin-left: auto;
+    width: 90%;
+    height: 250px;
+    padding-right: 100px;
+    .chat-hukidashi{
+      margin-left: auto;
+      .content-right{
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 1.5em 25px 1em 0;
+        padding: 20px 20px;
+        min-width: 120px;
+        max-width: 100%;
+        color: #555;
+        font-size: 25px;
+        background: pink;
+        border: solid 3px #555;
+        box-sizing: border-box;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+}
+
+.content-right:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-left: 12px solid pink;
+  z-index: 2;
+}
+
+.content-right:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-left: 14px solid #555;
+  z-index: 1;
+}
+
+.content-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid rgb(166, 214, 233);
+  z-index: 2;
+}
+
+.content-left:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+//フォーム
+.posts {
+  position: fixed;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  background-color: rgb(59, 59, 90);
+  line-height: 80px;
+  z-index: 3;
+  text-align: center;
+  .form-text-field{
+    width: 80%;
+    height: 50px;
+    padding-left: 20px;
+  }
+  .form-submit{
+    margin-left: 20px;
+    height: 50px;
+    width: 100px;
+    padding: 0 30px;
+    background-color: #dc8edf;
+    color: white;
+    cursor: pointer;
+  }
+}

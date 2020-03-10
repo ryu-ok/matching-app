@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title MatchingApp
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .header
+      .header__logo
+        = link_to root_path, class: "title" do
+          matching app
+      .header__right
+        - if user_signed_in? 
+          = link_to match_list_user_path(current_user), class: "header__right--btn" do
+            マッチリスト
+          = link_to follower_list_user_path(current_user), class: "header__right--btn" do
+            もらったいいね
+          = link_to edit_user_path(current_user), class: "header__right--btn" do
+            ユーザー編集
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+    = yield
