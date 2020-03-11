@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :hometown, presence: true
   validates :age, presence: true
   validates :gender, presence: true
+  validates :avatar, presence: true
 
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow
