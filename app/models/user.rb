@@ -44,4 +44,5 @@ class User < ApplicationRecord
       .where.not(id: relationships.select(:follow_id))
   end
 
+  #mount_uploader :avatar, AvatarUploader
 end

@@ -62,3 +62,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'pry-rails'
+gem 'fog-aws'
+gem "aws-sdk-s3", require: false #追記
